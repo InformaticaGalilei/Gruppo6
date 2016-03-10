@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Figure di Lissajous</title>
+
+  
+  
+  <script language="javascript">
+
+function sliderX(val1){
+document.getElementById('valx').innerHTML=val1;
+
+}
+function sliderY(val2){
+document.getElementById('valy').innerHTML=val2;
+
+}
+
+
+function creaFigura(value){
+
+a1=eval(document.getElementById("fx").value);
+b1=eval(document.getElementById("fy").value);
+var mioCanvas = document.getElementById("canvasProva");
+var context = mioCanvas.getContext("2d");
+
+context.beginPath();
+context.clearRect(0,0,800,800);
+context.closePath();
+
+context.beginPath();
+context.moveTo(0,0);
+var t=0;
+Bx = 200* Math.sin(a1 * t * 3.14/180);
+By = -200 * Math.sin(b1 * t * 3.14 /180);
+B1 = Bx+400;
+B2 = -By+400;
+context.moveTo(B1,B2);
+for( var t = 1; t <= 360; t += 1)
+{
+Bx = 200* Math.sin(a1 * t * 3.14/180);
+By = -200 * Math.sin(b1 * t * 3.14 /180);
+B1 = Bx+400;
+B2 = -By+400;
+context.lineTo(B1,B2);
+context.linewidth=5;
+context.strokeStyle= "#FFFFFF";
+context.stroke();
+}
+context. closePath();
+}
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+  <style type="text/css">
+#titolo {
+  border: 3px solid black;
+  font-weight: bold;
+  font-family: AR ESSENCE;
+  font-size: 300%;
+  text-align: center;
+  min-width: 99%;
+  color: white;
+  background-color: #666666;
+  font-style: italic;
+  margin-top: 5px;
+  line-height: 50px;
+  margin-right: 5px;
+  margin-left: 5px;
+  position: relative;
+  padding-bottom: 5px;
+}
+#footer {
+  border: 3px solid black;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-family: ar essence;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  text-align: center;
+  background-color: #666666;
+  color: white;
+  font-size: 114%;
+  min-width: 99%;
+  line-height: 30px;
+  position: relative;
+}
+#comandi {
+  border: 3px solid black;
+  font-family: AR ESSENCE;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  line-height: 50px;
+  margin-left: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: 200%;
+  min-width: 99%;
+  background-color: #666666;
+  margin-top: 5px;
+  margin-right: 5px;
+  position: relative;
+}
+.testo {
+  color: white;
+  font-size: 25px;
+  background-color: transparent;
+  font-family: ar essence;
+  width: 90%;
+  text-align: center;
+}
+.descrizione {
+  color: white;
+  text-align: justify;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+  </style>
+</head><body onload="creaFigura()">
+<table style="width: 100%; margin-left: auto; margin-right: auto; height: 100%; background-color: rgb(47, 81, 145); text-align: left;" cellpadding="10">
+
+  <tbody>
+    <tr>
+      <th style="background-color: rgb(47, 81, 145); text-align: justify;" colspan="2">
+      <div id="titolo">Curve di Lissajous </div>
+      </th>
+    </tr>
+    <tr>
+      <td style="height: 100px; text-align: right; vertical-align: top; width: 50%; background-color: rgb(47, 81, 145);">
+      <div id="comandi"> Comandi:</div>
+      <br>
+      <br>
+      <br>
+      <p class="testo">Frequenza X:&nbsp;&nbsp;&nbsp; <span id="valx">3
+      </span><br>
+      <input style="width: 600px; height: 30px;" min="0" max="20" value="3" step="1" onchange="sliderX(this.value); creaFigura(value)" id="fx" type="range"> <br>
+Frequenza Y:&nbsp;&nbsp;&nbsp; <span id="valy">4 </span><br>
+      <input style="width: 600px; height: 30px;" min="0" max="20" value="4" step="1" onchange="sliderY(this.value); creaFigura(value)" id="fy" type="range"><br>
+      </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p class="descrizione">Le <span style="font-weight: bold;">Figure
+di Lissajous</span> sono particolari
+funzioni
+ottenute dal sitema di equazioni parametriche:</p>
+      <br>
+      <p style="text-align: center;" class="descrizione">&nbsp;x =
+cos(fx*t) &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; y =
+cos(fy*t+&#966;)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; con &#966;=0.</p>
+      <p style="text-align: center;" class="descrizione"><br>
+      </p>
+      <p class="descrizione">Il grafico che si ottiene è il risultato
+della variazione delle due
+freqenze fx e fy,&nbsp; mantenendo costante ampiezza e fase delle due
+onde.
+E' possibile variare i parametri di frequenza attraverso i due slider,
+inserendo valori compresi tra 0 e 20. </p>
+      </td>
+      <td style="text-align: center; width: 50%; height: 100%; background-color: rgb(47, 81, 145); vertical-align: middle;"><canvas id="canvasProva" width="800" height="800" style="border: 3px solid ;">Attenzie:
+il tuo browser non supporta il tag CANVAS.</canvas> </td>
+    </tr>
+    <tr>
+      <td style="background-color: rgb(47, 81, 145);" colspan="2">
+      <div style="text-align: center;" id="footer"> Riccardo Barato -
+Luca Compagno - Riccardo Fiorese</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>
