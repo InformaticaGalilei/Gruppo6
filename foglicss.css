@@ -1,0 +1,68 @@
+/*
+ *	File CSS per l'interfaccia grafica.
+ *	
+ */
+
+#titolo {
+border: 3px solid black;
+font-weight: bold;
+font-family: AR ESSENCE;
+font-size: 300%;
+text-align: center;
+min-width: 99%;
+color: white;
+background-color: #666666;
+font-style: italic;
+margin-top: 5px;
+line-height: 50px;
+margin-right: 5px;
+margin-left: 5px;
+position: relative;
+padding-bottom: 5px;
+}
+#footer {
+border: 3px solid black;
+margin-right: 5px;
+margin-left: 5px;
+font-family: ar essence;
+padding-bottom: 3px;
+padding-top: 3px;
+text-align: center;
+background-color: #666666;
+color: white;
+font-size: 114%;
+min-width: 99%;
+line-height: 30px;
+position: relative;
+}
+#comandi {
+border: 3px solid black;
+font-family: AR ESSENCE;
+text-align: center;
+color: white;
+font-style: italic;
+line-height: 50px;
+margin-left: 5px;
+padding-bottom: 5px;
+font-weight: bold;
+font-size: 200%;
+min-width: 99%;
+background-color: #666666;
+margin-top: 5px;
+margin-right: 5px;
+position: relative;
+}
+.testo {
+color: white;
+font-size: 25px;
+background-color: transparent;
+font-family: ar essence;
+width: 90%;
+text-align: center;
+}
+.descrizione {
+color: white;
+text-align: justify;
+background-color: transparent;
+font-size: 20px;
+}

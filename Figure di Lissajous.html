@@ -5,129 +5,15 @@
   <title>Figure di Lissajous</title>
 
   
+
   
-  <script language="javascript">
-
-function sliderX(val1){
-document.getElementById('valx').innerHTML=val1;
-
-}
-function sliderY(val2){
-document.getElementById('valy').innerHTML=val2;
-
-}
-
-
-function creaFigura(value){
-
-a1=eval(document.getElementById("fx").value);
-b1=eval(document.getElementById("fy").value);
-var mioCanvas = document.getElementById("canvasProva");
-var context = mioCanvas.getContext("2d");
-
-context.beginPath();
-context.clearRect(0,0,800,800);
-context.closePath();
-
-context.beginPath();
-context.moveTo(0,0);
-var t=0;
-Bx = 200* Math.sin(a1 * t * 3.14/180);
-By = -200 * Math.sin(b1 * t * 3.14 /180);
-B1 = Bx+400;
-B2 = -By+400;
-context.moveTo(B1,B2);
-for( var t = 1; t <= 360; t += 1)
-{
-Bx = 200* Math.sin(a1 * t * 3.14/180);
-By = -200 * Math.sin(b1 * t * 3.14 /180);
-B1 = Bx+400;
-B2 = -By+400;
-context.lineTo(B1,B2);
-context.linewidth=5;
-context.strokeStyle= "#FFFFFF";
-context.stroke();
-}
-context. closePath();
-}
-
-
-
-
-
-
-
-
-
-
+  <script language="javascript" src="funzioniJavascript.js">
   </script>
-  
-  <style type="text/css">
-#titolo {
-  border: 3px solid black;
-  font-weight: bold;
-  font-family: AR ESSENCE;
-  font-size: 300%;
-  text-align: center;
-  min-width: 99%;
-  color: white;
-  background-color: #666666;
-  font-style: italic;
-  margin-top: 5px;
-  line-height: 50px;
-  margin-right: 5px;
-  margin-left: 5px;
-  position: relative;
-  padding-bottom: 5px;
-}
-#footer {
-  border: 3px solid black;
-  margin-right: 5px;
-  margin-left: 5px;
-  font-family: ar essence;
-  padding-bottom: 3px;
-  padding-top: 3px;
-  text-align: center;
-  background-color: #666666;
-  color: white;
-  font-size: 114%;
-  min-width: 99%;
-  line-height: 30px;
-  position: relative;
-}
-#comandi {
-  border: 3px solid black;
-  font-family: AR ESSENCE;
-  text-align: center;
-  color: white;
-  font-style: italic;
-  line-height: 50px;
-  margin-left: 5px;
-  padding-bottom: 5px;
-  font-weight: bold;
-  font-size: 200%;
-  min-width: 99%;
-  background-color: #666666;
-  margin-top: 5px;
-  margin-right: 5px;
-  position: relative;
-}
-.testo {
-  color: white;
-  font-size: 25px;
-  background-color: transparent;
-  font-family: ar essence;
-  width: 90%;
-  text-align: center;
-}
-.descrizione {
-  color: white;
-  text-align: justify;
-  background-color: transparent;
-  font-size: 20px;
-}
 
-  </style>
+  
+  <link rel="stylesheet" href="foglicss.css" type="text/css">
+
+  
 </head><body onload="creaFigura()">
 <table style="width: 100%; margin-left: auto; margin-right: auto; height: 100%; background-color: rgb(47, 81, 145); text-align: left;" cellpadding="10">
 
